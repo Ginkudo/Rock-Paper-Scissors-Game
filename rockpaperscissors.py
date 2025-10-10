@@ -1,6 +1,11 @@
 import random
-emojis = {'r': '🪨', 's': '✂️', 'p': '📃'}
-choices = ('r', 'p', 's')
+
+ROCK = 'r'
+SCISSORS = 's'
+PAPER = 'p'
+
+emojis = {ROCK: '🪨', SCISSORS: '✂️', PAPER: '📃'}
+choices = (ROCK, PAPER, SCISSORS)
 
 def get_player_choice():
     while True:
@@ -18,9 +23,9 @@ def win_condition(player_choice, cpu_choice):
     if player_choice == cpu_choice:
         print('Tie!')
     elif (
-        (player_choice == 's' and cpu_choice == 'p') or 
-        (player_choice == 'p' and cpu_choice == 'r') or 
-        (player_choice == 'r' and cpu_choice == 's')):
+        (player_choice == SCISSORS and cpu_choice == PAPER) or 
+        (player_choice == PAPER and cpu_choice == ROCK) or 
+        (player_choice == ROCK and cpu_choice == SCISSORS)):
         print('You win!')
     else:
         print('You lose!')
